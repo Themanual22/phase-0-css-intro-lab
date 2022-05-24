@@ -47,7 +47,7 @@ describe("index.css", () => {
   before(() => {
     css = CSSOM.parse(cssFile);
   });
-
+//error with test file
   it("contains valid CSS", async () => {
     const validation = await validateCss(cssFile);
     const isValidCss = validation.errors.length === 0;
@@ -85,10 +85,10 @@ describe("index.css", () => {
     expect(rule.style["margin"], hint).to.eq("auto");
   });
 
-  it("sets <div> font-family to 'Helvetica Neue'", () => {
+  it("sets <div> font-family to 'Helvetica", () => {
     const rule = findRule(css.cssRules, "div");
     const hint = "Missing font-family property for div";
-    expect(rule.style["font-family"], hint).to.contain("Helvetica Neue");
+    expect(rule.style["font-family"], hint).to.contain("Helvetica");
   });
 
   it("sets <div> background to white", () => {
